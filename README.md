@@ -20,15 +20,15 @@ To install the chart with the release name my-release (my-release is the name th
 
 For NGINX:
 
-<code>$ helm install ingress-nginx nginx-stable/nginx-ingress -n ingress-nginx --create-namespace</code>
+<code>$ helm install ingress-nginx nginx-stable/nginx-ingress -n nginx-ingress --create-namespace</code>
 
 
 ### Static LAN IP
 By default ingress is not visible in your LAN, only internally from master/worker nodes.
 First you have to set Static IP for ingress  
 
- - choose one from your LAN CIDR
- - add this IP to master or worker node
+ - choose one IP from your LAN CIDR (example 192.168.0.220)
+ - add this IP to master or worker node (netplan in Ubuntu)
 
 Edit nginx-ingress service
 
@@ -38,7 +38,7 @@ Edit nginx-ingress service
 
     spec:
      externalIPs:
-     - 192.168.0.230
+     - <any_local_IP>
 
 ### Edit Ingress external traffic policy
 
