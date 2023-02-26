@@ -10,14 +10,14 @@ Demos for Kubernetes local installation
 
 https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/
 
-#### Adding the Helm Repository
+#### *Adding the Helm Repository*
 
 This step is required if you’re installing the chart via the helm repository.
 
     helm repo add nginx-stable https://helm.nginx.com/stable
     helm repo update
 
-#### Installing via Helm Repository
+#### *Installing via Helm Repository*
 
 To install the chart with the release name my-release (my-release is the name that you choose):
 
@@ -43,7 +43,8 @@ Edit nginx-ingress service
      externalIPs:
      - <any_local_IP>
 
-### Edit Ingress external traffic policy
+### Ingress external traffic policy
+Change Ingress external traffic policy from `Local` to `Cluster`
 
     kubectl edit service nginx-ingress-nginx-ingress -n nginx-ingress
 change:
