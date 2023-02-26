@@ -5,7 +5,23 @@ Demos for Kubernetes local installation
 
 ### Ingress installation
 
-TBD
+https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/
+
+#### Adding the Helm Repository
+
+This step is required if you’re installing the chart via the helm repository.
+
+<code>$ helm repo add nginx-stable https://helm.nginx.com/stable
+$ helm repo update</code>
+
+#### Installing via Helm Repository
+
+To install the chart with the release name my-release (my-release is the name that you choose):
+
+For NGINX:
+
+<code>$ helm install ingress-nginx nginx-stable/nginx-ingress -n ingress-nginx --create-namespace</code>
+
 
 ### Static LAN IP
 By default ingress is not visible in your LAN, only internally from master/worker nodes.
