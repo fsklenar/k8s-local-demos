@@ -1,6 +1,9 @@
 # k8s-local-demos
 Demos for Kubernetes local installation
 
+## DEMO01
+- NGINX deployment + Service + Ingress
+
 # Notes
 
 ### Ingress installation
