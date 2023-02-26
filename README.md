@@ -32,7 +32,7 @@ First you have to set Static IP for ingress
 
 Edit nginx-ingress service
 
-    kubectl edit service nginx-ingress-nginx-ingress
+    kubectl edit service nginx-ingress-nginx-ingress -n nginx-ingress
 
  add
 
@@ -42,7 +42,7 @@ Edit nginx-ingress service
 
 ### Edit Ingress external traffic policy
 
-    kubectl edit service nginx-ingress-nginx-ingress
+    kubectl edit service nginx-ingress-nginx-ingress -n nginx-ingress
 change:
 
     externalTrafficPolicy: Cluster
