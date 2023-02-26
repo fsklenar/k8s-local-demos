@@ -11,8 +11,8 @@ https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-h
 
 This step is required if you’re installing the chart via the helm repository.
 
-<code>$ helm repo add nginx-stable https://helm.nginx.com/stable
-$ helm repo update</code>
+    helm repo add nginx-stable https://helm.nginx.com/stable
+    helm repo update
 
 #### Installing via Helm Repository
 
@@ -20,7 +20,7 @@ To install the chart with the release name my-release (my-release is the name th
 
 For NGINX:
 
-<code>$ helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress --create-namespace</code>
+    helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress --create-namespace
 
 
 ### Static LAN IP
