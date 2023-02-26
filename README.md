@@ -18,7 +18,7 @@ Edit nginx-ingress service
 
     kubectl edit service nginx-ingress-nginx-ingress
 
- Add
+ add
 
     spec:
      externalIPs:
