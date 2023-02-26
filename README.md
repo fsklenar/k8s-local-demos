@@ -20,7 +20,7 @@ To install the chart with the release name my-release (my-release is the name th
 
 For NGINX:
 
-<code>$ helm install ingress-nginx nginx-stable/nginx-ingress -n nginx-ingress --create-namespace</code>
+<code>$ helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress --create-namespace</code>
 
 
 ### Static LAN IP
