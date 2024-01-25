@@ -1,30 +1,14 @@
+
+
 # k8s-local-demos
 Demos for Kubernetes local installation
 
 ## DEMO01
 - NGINX deployment + Service + Ingress
 
-# Notes
+### Ingress installation INGRESS-NGINX
 
-### Ingress installation
-
-https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/
-
-#### *Adding the Helm Repository*
-
-This step is required if you’re installing the chart via the helm repository.
-
-    helm repo add nginx-stable https://helm.nginx.com/stable
-    helm repo update
-
-#### *Installing via Helm Repository*
-
-To install the chart with the release name my-release (my-release is the name that you choose):
-
-For NGINX:
-
-    helm install nginx-ingress nginx-stable/nginx-ingress -n nginx-ingress --create-namespace
-
+https://kubernetes.github.io/ingress-nginx/deploy/
 
 ### Static LAN IP
 By default ingress is not visible in your LAN, only internally from master/worker nodes.
@@ -33,22 +17,19 @@ First you have to set Static IP for ingress
  - choose one IP from your LAN CIDR (example 192.168.0.220)
  - add this IP to master or worker node (netplan in Ubuntu)
 
-Edit nginx-ingress service
+### Prepare values.yaml for ingress-nginx
 
-    kubectl edit service nginx-ingress-nginx-ingress -n nginx-ingress
+ - fill-in your LAN IP into ingress-nginx/values.yaml
 
- add
+#### *Installing via Helm Repository*
 
-    spec:
-     externalIPs:
-     - <any_local_IP>
+To install the chart with the release name ingress-nginx:
 
-### Ingress external traffic policy
-Change Ingress external traffic policy from `Local` to `Cluster`
+For NGINX:
 
-    kubectl edit service nginx-ingress-nginx-ingress -n nginx-ingress
-change:
+    export INGRESS_NGINX_VER=4.9.0
+    helm upgrade ingress-nginx --version ${INGRESS_NGINX_VER} -i -f ingress-nginx/values.yaml --namespace ingress-nginx --create-namespace ingress-nginx/ingress-nginx
 
-    externalTrafficPolicy: Cluster
+
 
 
