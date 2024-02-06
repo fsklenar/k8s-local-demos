@@ -1,6 +1,7 @@
 # k8s-local-demos
 Demos for Kubernetes local installation
 
+---
 # Ingress installation INGRESS-NGINX
 
 https://kubernetes.github.io/ingress-nginx/deploy/
@@ -24,8 +25,8 @@ For NGINX:
 
     export INGRESS_NGINX_VER=4.9.0
     helm upgrade ingress-nginx --version ${INGRESS_NGINX_VER} -i -f ingress-nginx/values.yaml --namespace ingress-nginx --create-namespace ingress-nginx/ingress-nginx
-
-## Demos
+---
+# Demos
 ### demo01
 - NGINX deployment + Service + Ingress
 
