@@ -9,8 +9,8 @@ https://kubernetes.github.io/ingress-nginx/deploy/
 By default ingress is not visible in your LAN, only internally from master/worker nodes.
 First you have to set Static IP for ingress  
 
-	 - choose one IP from your LAN CIDR (example 192.168.0.220)
-	 - add this IP to master or worker node (netplan in Ubuntu)
+- choose one IP from your LAN CIDR (example 192.168.0.220)
+- add this IP to master or worker node (netplan in Ubuntu)
 
 ### Prepare values.yaml for ingress-nginx
 
