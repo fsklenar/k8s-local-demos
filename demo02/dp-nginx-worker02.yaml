@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deploy-w02
+  name: nginx-deploy-w02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-deploy-w02
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy-w02
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      nodeSelector:
+        size: worker02
