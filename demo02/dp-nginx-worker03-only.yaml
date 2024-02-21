@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deploy-w03-only
+  name: nginx-deploy-w03-only
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deploy-w03-only
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy-w03-only
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      tolerations:
+      - key: "size"
+        operator: "Equal"
+        value: "small"
+        effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: sizelabel
+                operator: In
+                values:
+                - small
