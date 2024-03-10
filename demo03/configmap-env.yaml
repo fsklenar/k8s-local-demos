@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-env
+  namespace: demo03
+data:
+  APP_SIZE: "big"

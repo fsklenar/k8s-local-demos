@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-cm-pod
+spec:
+  containers:
+  - name: ubuntu-cm-container
+    image: ubuntu
+    command: ["sleep"]
+    args: ["360"]
+    env:
+      - name: APP_SIZE 
+        valueFrom:
+          configMapKeyRef:
+            name: configmap-env
+            key: APP_SIZE
