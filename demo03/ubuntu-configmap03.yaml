@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-cm03-pod
+spec:
+  containers:
+  - name: ubuntu-cm03-container
+    image: ubuntu
+    command: ["sleep"]
+    args: ["360"]
+    volumeMounts:
+      - name: configmap-vol
+        mountPath: /etc/config
+  volumes:
+    - name: configmap-vol
+      configMap:
+        name: configmap-vol

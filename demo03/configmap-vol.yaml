@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-vol
+  namespace: demo03
+data:
+  volume.file: |-
+    property.1=value-1

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-cm-pod
+  name: ubuntu-cm01-pod
 spec:
   containers:
-  - name: ubuntu-cm-container
+  - name: ubuntu-cm01-container
     image: ubuntu
     command: ["sleep"]
     args: ["360"]
