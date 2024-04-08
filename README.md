@@ -23,7 +23,9 @@ To install the chart with the release name ingress-nginx:
 
 For NGINX:
 
-    export INGRESS_NGINX_VER=4.9.0
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    export INGRESS_NGINX_VER=4.10.0
     helm upgrade ingress-nginx --version ${INGRESS_NGINX_VER} -i -f ingress-nginx/values.yaml --namespace ingress-nginx --create-namespace ingress-nginx/ingress-nginx
 ---
 # Demos
