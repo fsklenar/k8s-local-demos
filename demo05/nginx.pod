@@ -1,0 +1,4 @@
+Server:    10.96.0.10
+Address 1: 10.96.0.10 kube-dns.kube-system.svc.cluster.local
+
+nslookup: can't resolve 'nginx-resolver.demo05.pods.cluster.local'
