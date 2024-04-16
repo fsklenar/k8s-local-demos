@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-proj-268
+  name: web-proj-268
+  namespace: demo06
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: web-proj-268
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-proj-268
+    spec:
+      containers:
+      - image: nginx:1.23
+        name: nginx

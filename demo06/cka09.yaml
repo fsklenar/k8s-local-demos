@@ -1,0 +1,15 @@
+#kubectl taint nodes k8sworker01 color=blue:NoSchedule
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-pod
+  namespace: demo06
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  tolerations:
+  - key: "color"
+    operator: "Equal"
+    value: "blue"
+    effect: "NoSchedule"
