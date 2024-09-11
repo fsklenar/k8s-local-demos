@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-pod
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:noble
+    command: ["/bin/bash"]
+    args: ["-c","ls -la /var/run/secrets/kubernetes.io/serviceaccount;token=`cat /var/run/secrets/kubernetes.io/serviceaccount/token`;apt update; apt install -y curl; curl -k https://192.168.0.202:6443/api --header \"Authorization: Bearer $token\""]
+  serviceAccountName: testsa
