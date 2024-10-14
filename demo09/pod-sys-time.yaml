@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: command-demo
+  labels:
+    purpose: demonstrate-command
+spec:
+  containers:
+  - name: command-demo-container
+    image: busybox
+    command: ["sleep"]
+    args: ["3200"]
+    securityContext:
+      capabilities:
+        add: ["SYS_TIME"]
